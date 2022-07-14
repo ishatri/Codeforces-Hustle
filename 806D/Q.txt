@@ -1,0 +1,58 @@
+D. Double Strings
+time limit per test2 seconds
+memory limit per test256 megabytes
+inputstandard input
+outputstandard output
+You are given 𝑛 strings 𝑠1,𝑠2,…,𝑠𝑛 of length at most 8.
+
+For each string 𝑠𝑖, determine if there exist two strings 𝑠𝑗 and 𝑠𝑘 such that 𝑠𝑖=𝑠𝑗+𝑠𝑘. That is, 𝑠𝑖 is the concatenation of 𝑠𝑗 and 𝑠𝑘. Note that 𝑗 can be equal to 𝑘.
+
+Recall that the concatenation of strings 𝑠 and 𝑡 is 𝑠+𝑡=𝑠1𝑠2…𝑠𝑝𝑡1𝑡2…𝑡𝑞, where 𝑝 and 𝑞 are the lengths of strings 𝑠 and 𝑡 respectively. For example, concatenation of "code" and "forces" is "codeforces".
+
+Input
+The first line contains a single integer 𝑡 (1≤𝑡≤104) — the number of test cases.
+
+The first line of each test case contains a single integer 𝑛 (1≤𝑛≤105) — the number of strings.
+
+Then 𝑛 lines follow, the 𝑖-th of which contains non-empty string 𝑠𝑖 of length at most 8, consisting of lowercase English letters. Among the given 𝑛 strings, there may be equal (duplicates).
+
+The sum of 𝑛 over all test cases doesn't exceed 105.
+
+Output
+For each test case, output a binary string of length 𝑛. The 𝑖-th bit should be 𝟷 if there exist two strings 𝑠𝑗 and 𝑠𝑘 where 𝑠𝑖=𝑠𝑗+𝑠𝑘, and 𝟶 otherwise. Note that 𝑗 can be equal to 𝑘.
+
+Example
+inputCopy
+3
+5
+abab
+ab
+abc
+abacb
+c
+3
+x
+xx
+xxx
+8
+codeforc
+es
+codes
+cod
+forc
+forces
+e
+code
+outputCopy
+10100
+011
+10100101
+Note
+In the first test case, we have the following:
+
+𝑠1=𝑠2+𝑠2, since 𝚊𝚋𝚊𝚋=𝚊𝚋+𝚊𝚋. Remember that 𝑗 can be equal to 𝑘.
+𝑠2 is not the concatenation of any two strings in the list.
+𝑠3=𝑠2+𝑠5, since 𝚊𝚋𝚌=𝚊𝚋+𝚌.
+𝑠4 is not the concatenation of any two strings in the list.
+𝑠5 is not the concatenation of any two strings in the list.
+Since only 𝑠1 and 𝑠3 satisfy the conditions, only the first and third bits in the answer should be 𝟷, so the answer is 𝟷𝟶𝟷𝟶𝟶.
